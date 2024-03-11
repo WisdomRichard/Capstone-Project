@@ -1,0 +1,50 @@
+form, .confirm{
+  padding: 30px 10%;
+}
+
+.formField{
+    padding: 40px 20px;
+    border-style: double;
+    border-radius: 10px;
+}
+
+label {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+input, label{
+    display: inline-block;
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+input, select{
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+#book-date, #book-time, #book-guests, #book-occasion{
+  background: #bdbdbd43;
+  padding: 10px 27px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.bookingFormButton input{
+   background-color: rgb(244, 206, 20);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px 2px rgb(23, 21, 11, 10%);
+}
+
+.confirm span{
+  color: blue;
+}
