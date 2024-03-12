@@ -5,11 +5,28 @@ const BookingForm = (props) => {
     const [date, setDate] = useState('')
     const [times, setTimes] = useState('')
     const [guests, setGuests] = useState('')
-    const [occasion, setOccasion] = useState('')
+    const [occasion, setOccasion] = useState('Occasion')
 
+    const getIsFormValid = () => {
+        return (
+            date &&
+            times &&
+            guests &&
+            occasion !== 'Occasion'
+        )
+    }
+
+    const clearForm = () => {
+        setDate('')
+        setTimes('')
+        setGuests('')
+        setOccasion('Occasion')
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.submitForm(e)
+        props.submitForm(e);
+        alert('Reservation Placed')
+        clearForm()
     }
 
     const handleChange = (e) => {
@@ -44,13 +61,14 @@ const BookingForm = (props) => {
                         <div>
                             <label htmlFor='book-occasion'>Occasion:</label>
                             <select id='book-occasion' key='occasion' value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+                                <option>Occasion</option>
                                 <option>Birthday</option>
                                 <option>Engagement</option>
                                 <option>Anniversary</option>
                             </select>
                         </div>
                         <div className='bookingFormButton'>
-                            <input aria-label='On Click' type='submit' value='Make Your Reservation'/>
+                            <input aria-label='On Click' type='submit' value='Make Your Reservation' disabled={!getIsFormValid()}/>
                         </div>
                     </fieldset>
                 </form>
