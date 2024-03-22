@@ -1,10 +1,13 @@
 import React from 'react'
-import recipes from '../recipes'
+import recipes from '../components/recipes'
 import '../styles/Menu.css'
+import Cards from "./Cards";
 import Swal from "sweetalert2";
+
 const Menu = () => {
-    const handleOrder = (id) => {
-        console.log(id, 'id is clicked')
+
+    const handleOrder = (e) => {
+        console.log(e, 'id is clicked')
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -25,27 +28,18 @@ const Menu = () => {
     }
 
     return (
-        <div className='menu-container'>
+        <div className='menu-container section__margin' id='menu'>
             <div className='menu-header'>
-                <h2>This weeks specials!</h2>
-                <button className='orderBtn'>Order Menu</button>
+                <h2 className='gradient-texts'>This week's specials!</h2>
+                <div className='menu-button'>
+                    <button onClick={() => handleOrder()}>Order Menu</button>
+                </div>
             </div>
-            <div className='cards'>
+            <div className='cards-container'>
                 {
                     recipes.map(recipe => <div key={recipe.id} className='menu-items'>
-                        <img src={recipe.image} alt=''/>
-                        <div className='menu-content'>
-                            <div className='heading'>
-                                <h3>{recipe.title}</h3>
-                                <p>${recipe.price}</p>
-                            </div>
-                            <div className='description'>
-                                <p>{recipe.description}</p>
-                            </div>
-                            <div>
-                                <button className='orderBtn' onClick={() => handleOrder(recipe.id)}>Order Now</button>
-                            </div>
-                        </div>
+                        <Cards image={recipe.image} title={recipe.title} price={recipe.price}
+                               description={recipe.description} id={recipe.id}/>
                     </div>)
                 }
             </div>

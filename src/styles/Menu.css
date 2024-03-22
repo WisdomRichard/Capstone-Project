@@ -1,93 +1,77 @@
-/* menu items */
-
-.menu-container{
-  margin: 10px 5px;
-  padding: 10px 6%;
+.menu-container {
+    padding: 2rem;
+    border-radius: 5px;
+    background: #EDEFEE;
 }
 
-.menu-container h2{
-  color: #000;
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
-.menu-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+.menu-header h2 {
+    font-family: var(--font-family);
+    font-size: 40px;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: -0.05rem;
 }
 
-.cards{
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem 1rem;
+.menu-button {
+    display: flex;
 }
 
-.menu-items{
-  width: 330px;
-  max-width: 100%;
-  height: 480px;
-  max-height: 100%;
-  background: #a9c8be;
-  border-radius: 8px;
+.menu-button button {
+    background-color: #F4CE14;
+    color: black;
+    font-family: var(--font-family);
+    font-weight: 500;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 3px 2px rgb(23, 21, 11, 15%);
 }
 
-.menu-container img{
-  object-fit: cover;
-  width: 100%;
-  height: 230px;
-  border-radius: 8px;
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    justify-content: center;
 }
 
-.menu-content{
-  padding: 5px 25px;
-
+@media screen and (max-width: 1300px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        transition: all 0.3s ease-in;
+    }
 }
 
-.menu-content .heading{
-  display: flex;
-  justify-content: space-between;
-  height: 50px;
+@media screen and (max-width: 1000px) {
+    .menu-header h2 {
+        font-size: 35px;
+        font-weight: 700;
+    }
 }
 
-.menu-content .description{
-  height: 110px;
-}
+@media screen and (max-width: 600px) {
+    .menu-header h2 {
+        font-size: 23px;
+        font-weight: 700;
+    }
 
-.orderBtn{
-  display: flex;
-  padding: 8px 11px 10px;
-  font-size: 14px;
-  font-weight: 600;
-  background-color: #F4CE14;
-  box-shadow: 0 2px 3px 2px rgb(23, 21, 11, 15%);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: black;
-  font-family: 'Segoe UI', sans-serif;
-}
+    .menu-button button {
+        font-size: 12px;
+    }
 
-@media screen and (max-width: 1059px){
-  .menu-items{
-    width: 800px;
-    transition: all 0.3s ease-in;
-}
-  .menu-content{
-    padding: 10px 30px;
-}
 
-}
-
-@media (min-width: 1060px) and (max-width: 1200px){
-  .menu-items{
-    width: 450px;
-    transition: all 0.2s ease-in;
-}
-    .menu-content{
-      padding: 10px 30px;
-}
-
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1rem;
+        transition: all 0.3s ease-in;
+    }
 }

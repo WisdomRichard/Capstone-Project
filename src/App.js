@@ -6,14 +6,17 @@ import Footer from "./components/Footer";
 
 
 function App() {
-  return (
-    <>
-        <NavBar/>
-        <Main/>
-        <Menu/>
-        <Footer/>
-    </>
-  );
+    return (
+        <div className='App' id='app'>
+            <div className='gradient__bg'>
+                <NavBar/>
+                <Main/>
+                <Menu/>
+                <Footer/>
+            </div>
+
+        </div>
+    );
 }
 
 export default App;

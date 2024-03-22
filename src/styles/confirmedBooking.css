@@ -1,0 +1,32 @@
+.confirm {
+    background: #EDEFEE;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 5px;
+}
+
+.confirm-header h1 {
+    font-family: var(--font-family);
+    font-size: 22px;
+    font-weight: 700;
+    color: #6c6a6a;
+}
+
+.confirm-button a {
+    background-color: rgb(244, 206, 20);
+    color: black;
+    font-family: var(--font-family);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 6px 2px rgb(23, 21, 11, 10%);
+}
+
+.confirm span {
+    color: green;
+}
